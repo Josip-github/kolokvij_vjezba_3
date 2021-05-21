@@ -126,7 +126,8 @@ inner join prijatelj_brat pb on p2.sifra = pb.prijatelj
 inner join brat b on pb.brat = b.sifra
 where o.lipa != 91.00 and p2.haljina like '%ba%';
 
-
+#Prikažite kolone haljina i lipa iz tablice prijatelj čiji se primarni ključ ne nalaze u tablici prijatelj_brat.
+#treba još ovo riješiti
 
 
 
