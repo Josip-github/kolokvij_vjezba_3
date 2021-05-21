@@ -104,6 +104,9 @@ values(1,1), (2,2), (3,3);
 #U tablici svekar postavite svim zapisima kolonu suknja na vrijednost Osijek.
 update svekar set suknja = 'Osijek';
 
+#U tablici punica obrišite sve zapise čija je vrijednost kolone kratkamajica jednako AB.
+delete from punica where kratkamajica = '44';
+
 
 
 
