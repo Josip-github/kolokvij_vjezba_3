@@ -111,6 +111,21 @@ delete from punica where kratkamajica = '44';
 select majica from ostavljena where lipa != 9.00 and lipa != 10.00 
 and lipa != 20.00 and lipa != 30.00 and lipa != 35.00; #ovo se da malo bolje
 
+/*Prikažite ekstroventno iz tablice brat, vesta iz tablice punica te
+kuna iz tablice snasa uz uvjet da su vrijednosti kolone lipa iz tablice
+ostavljena različito od 91 te da su vrijednosti kolone haljina iz tablice
+prijatelj sadrže niz znakova ba. Podatke posložite po kuna iz tablice
+snasa silazno.*/
+
+#brat, punica, snasa, ostavljena, prijatelj
+select b.ekstrovertno, p.vesta, s.kuna 
+from punica p inner join snasa s on p.snasa = s.sifra 
+inner join ostavljena o on s.ostavljena = o.sifra 
+inner join prijatelj p2 on o.prijatelj = p2.sifra 
+inner join prijatelj_brat pb on p2.sifra = pb.prijatelj 
+inner join brat b on pb.brat = b.sifra
+where o.lipa != 91.00 and p2.haljina like '%ba%';
+
 
 
 
