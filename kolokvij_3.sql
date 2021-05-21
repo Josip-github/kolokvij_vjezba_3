@@ -101,6 +101,9 @@ values(7,0), (13,1), (17,0);
 insert into prijatelj_brat(prijatelj,brat)
 values(1,1), (2,2), (3,3);
 
+#U tablici svekar postavite svim zapisima kolonu suknja na vrijednost Osijek.
+update svekar set suknja = 'Osijek';
+
 
 
 
