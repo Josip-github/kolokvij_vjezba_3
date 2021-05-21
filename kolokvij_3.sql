@@ -28,7 +28,7 @@ create table snasa(
 	kuna decimal(15,6) not null,
 	eura decimal(12,9) not null,
 	treciputa datetime,
-	ostavljena int
+	ostavljena int not null
 );
 
 create table punica(
@@ -81,6 +81,25 @@ alter table ostavljena add foreign key (prijatelj) references prijatelj(sifra);
 
 alter table prijatelj_brat add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_brat add foreign key (brat) references brat(sifra);
+
+#U tablice snasa, ostavljena i prijatelj_brat unesite po 3 retka.
+
+insert into ostavljena(modelnaocala)
+values('Rayban'), ('Sunčane naočale'), ('Naočale za čitanje');
+
+insert into snasa(kuna,eura,ostavljena)
+values(99.99,88.88,1), 
+(77.77,66.66,2), 
+(55.55,44.44,3);
+
+insert into prijatelj(indiferentno)
+values(0), (1), (0);
+
+insert into brat(ogrlica, ekstrovertno)
+values(7,0), (13,1), (17,0);
+
+insert into prijatelj_brat(prijatelj,brat)
+values(1,1), (2,2), (3,3);
 
 
 
