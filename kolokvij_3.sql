@@ -107,6 +107,10 @@ update svekar set suknja = 'Osijek';
 #U tablici punica obrišite sve zapise čija je vrijednost kolone kratkamajica jednako AB.
 delete from punica where kratkamajica = '44';
 
+#Izlistajte majica iz tablice ostavljena uz uvjet da vrijednost kolone lipa nije 9,10,20,30 ili 35.
+select majica from ostavljena where lipa != 9.00 and lipa != 10.00 
+and lipa != 20.00 and lipa != 30.00 and lipa != 35.00; #ovo se da malo bolje
+
 
 
 
