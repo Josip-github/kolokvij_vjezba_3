@@ -108,8 +108,7 @@ update svekar set suknja = 'Osijek';
 delete from punica where kratkamajica = '44';
 
 #Izlistajte majica iz tablice ostavljena uz uvjet da vrijednost kolone lipa nije 9,10,20,30 ili 35.
-select majica from ostavljena where lipa != 9.00 and lipa != 10.00 
-and lipa != 20.00 and lipa != 30.00 and lipa != 35.00; #ovo se da malo bolje
+select majica from ostavljena where lipa not in (9.00,10.00,20.00,30.00,35.00);
 
 /*Prikažite ekstroventno iz tablice brat, vesta iz tablice punica te
 kuna iz tablice snasa uz uvjet da su vrijednosti kolone lipa iz tablice
