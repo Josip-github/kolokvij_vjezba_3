@@ -123,11 +123,13 @@ inner join ostavljena o on s.ostavljena = o.sifra
 inner join prijatelj p2 on o.prijatelj = p2.sifra 
 inner join prijatelj_brat pb on p2.sifra = pb.prijatelj 
 inner join brat b on pb.brat = b.sifra
-where o.lipa != 91.00 and p2.haljina like '%ba%';
+where o.lipa != 91.00 and p2.haljina like '%ba%'
+order by s.kuna desc;
 
 #Prikažite kolone haljina i lipa iz tablice prijatelj čiji se primarni ključ ne nalaze u tablici prijatelj_brat.
-#treba još ovo riješiti
-
+select p.haljina , p.lipa 
+from prijatelj p left join prijatelj_brat pb on p.sifra = pb.prijatelj 
+where pb.prijatelj is null;
 
 
 
